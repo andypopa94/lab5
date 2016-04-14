@@ -1,6 +1,32 @@
-10:36:00 **** Incremental Build of configuration Debug for project hello_world ****
+14:01:09 **** Build of configuration Debug for project hello_world ****
 make all 
-make: Nothing to be done for `all'.
+Building file: ../src/helloworld.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../hello_world_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+Finished building: ../src/helloworld.c
+ 
+Building file: ../src/platform.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../hello_world_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+ 
+Building target: hello_world.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+c:/xilinx/14.6/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/le\libxil.a(print.o): In function `print':
+/gnu/mb_gnu/src/newlib/libgloss/microblaze/print.c:25: undefined reference to `outbyte'
+./src/helloworld.o: In function `main':
+C:\materija\RA113-2013\LPRS2\lab5\SDK\SDK_Workspace\hello_world\Debug/../src/helloworld.c:63: undefined reference to `clear_text_screen'
+C:\materija\RA113-2013\LPRS2\lab5\SDK\SDK_Workspace\hello_world\Debug/../src/helloworld.c:64: undefined reference to `clear_graphics_screen'
+C:\materija\RA113-2013\LPRS2\lab5\SDK\SDK_Workspace\hello_world\Debug/../src/helloworld.c:65: undefined reference to `draw_square'
+C:\materija\RA113-2013\LPRS2\lab5\SDK\SDK_Workspace\hello_world\Debug/../src/helloworld.c:66: undefined reference to `set_cursor'
+C:\materija\RA113-2013\LPRS2\lab5\SDK\SDK_Workspace\hello_world\Debug/../src/helloworld.c:67: undefined reference to `print_string'
+C:\materija\RA113-2013\LPRS2\lab5\SDK\SDK_Workspace\hello_world\Debug/../src/helloworld.c:68: undefined reference to `MY_PERIPHERAL_ClearScreen'
+./src/platform.o: In function `enable_caches':
+C:\materija\RA113-2013\LPRS2\lab5\SDK\SDK_Workspace\hello_world\Debug/../src/platform.c:80: undefined reference to `microblaze_enable_icache'
+C:\materija\RA113-2013\LPRS2\lab5\SDK\SDK_Workspace\hello_world\Debug/../src/platform.c:80: undefined reference to `microblaze_enable_dcache'
+collect2: ld returned 1 exit status
+make: *** [hello_world.elf] Greška 1
 
-10:36:00 Build Finished (took 120ms)
+14:01:09 Build Finished (took 573ms)
 

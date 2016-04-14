@@ -1,7 +1,7 @@
-10:35:46 **** Build of project hello_world_bsp ****
+14:01:03 **** Build of project hello_world_bsp ****
 make -k all 
 libgen -hw ../basic_system_hw_platform/system.xml\
-	       -lp D:/work/lprs2/2013_2014/Resene_vezbe/lab45/basic_system\
+	       -lp C:/materija/RA113-2013/LPRS2/lab5 -lp D:/work/lprs2/2013_2014/Resene_vezbe/lab56/basic_system\
 	       -pe microblaze_0 \
 	       -log libgen.log \
 	       system.mss
@@ -10,7 +10,8 @@ Xilinx EDK 14.6 Build EDK_P.68d
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 Command Line: libgen -hw ../basic_system_hw_platform/system.xml -lp
-D:/work/lprs2/2013_2014/Resene_vezbe/lab45/basic_system -pe microblaze_0 -log
+C:/materija/RA113-2013/LPRS2/lab5 -lp
+D:/work/lprs2/2013_2014/Resene_vezbe/lab56/basic_system -pe microblaze_0 -log
 libgen.log system.mss 
 
 
@@ -31,10 +32,16 @@ Compiling common
 Compiling standalone
 Compiling uartlite
 Compiling bram
+Compiling my_peripheral
 Compiling vga_periph_mem
+vga_periph_mem.c:59:6: error: conflicting types for 'print_char'
+vga_periph_mem.h:79:6: note: previous declaration of 'print_char' was here
+make[1]: *** [libs] Greška 1
 Compiling cpu
-Running execs_generate.
-Finished building libraries
+ERROR:EDK:369 -  make failed for target "libs" 
+ERROR:EDK:3418 - Error(s) while running make.
+make: *** [microblaze_0/lib/libxil.a] Greška 2
+make: Meta `all' nije ponovo izraðen zbog grešaka.
 
-10:35:52 Build Finished (took 6s.930ms)
+14:01:09 Build Finished (took 6s.114ms)
 
